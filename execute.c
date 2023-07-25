@@ -8,14 +8,14 @@
  */
 int execute_call(char **argv, char *name)
 {
-	int status = 0, result;
+	int result;
 	char *full_path = NULL;
 
 	if (!argv || !*argv)
 		return (-1);
 
 	if (check_builtin(argv))
-		return (status);
+		return (0);
 
 	if (access(argv[0], X_OK) == 0)
 	{
