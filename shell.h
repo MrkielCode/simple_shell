@@ -18,8 +18,8 @@
 extern char **environ;
 
 /* shell mode **/
-void my_non_interactive_shell(char *name);
-void my_interactive_shell(char *name);
+void interactive_shell_mode(char *name);
+void non_interactive_shell_mode(char *name);
 
 /** string utilities */
 int _putchar(char c);
