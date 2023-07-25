@@ -18,7 +18,6 @@ char *read_inputs(void)
 			if (feof(stdin))
 			{
 				free(line);
-				_print("\n");
 				exit(EXIT_SUCCESS);
 			}
 			else
