@@ -9,11 +9,15 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc > 0)
+	(void)argc;
 
+	if (isatty(STDIN_FILENO) == 0)
 	{
-		my_interactive_shell(argv[0]);
+		interactive_shell_mode(argv[0]);
 	}
-
+	else
+	{
+		non_interactive_shell_mode(argv[0]);
+	}
 	return (0);
 }
