@@ -11,7 +11,7 @@ void s_exit(char **av)
 {
 	int result = 0;
 
-	if (av[1] != NULL)
+	if (av && av[1] != NULL)
 	{
 		result = atoi(av[1]);
 	}
