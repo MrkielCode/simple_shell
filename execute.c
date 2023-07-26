@@ -25,7 +25,7 @@ int execute_call(char **argv, char *name)
 
 
 	if (check_builtin(argv))
-		return (0);
+		return (-1);
 
 	if (access(argv[0], X_OK) == 0)
 	{
