@@ -49,6 +49,8 @@ int check_builtin(char **av);
 void s_exit(char **av);
 int s_env(void);
 void s_cd(char **av);
+int s_setenv(char **av);
+int s_unsetenv(char **av);
 
 void handle_sigint(int sig);
 void handle_sigquit(int sig);
