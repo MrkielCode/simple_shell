@@ -16,6 +16,10 @@ int check_builtin(char **av)
 		s_env();
 	else if (!strcmp(av[0], "cd"))
 		s_cd(av);
+	else if (!strcmp(av[0], "setenv"))
+		s_setenv(av);
+	else if (!strcmp(av[0], "unsetenv"))
+		s_unsetenv(av);
 	else
 		return (0);
 
