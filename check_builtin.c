@@ -1,9 +1,10 @@
 #include "shell.h"
 
 /**
- * check_builtin - check if command exit in builtin
- * @av: argument variables
- * Return: 0 or command
+ * check_builtin - check if command exit in built-ins
+ * @av: Argument variables (Array of strings)
+ * Return: 0 or if the command is not a built-in,
+ * 1 if it is a built-in
  */
 
 int check_builtin(char **av)
