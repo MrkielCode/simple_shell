@@ -8,7 +8,7 @@
 
 void s_exit(char **av)
 {
-	int result = 0;
+	int result;
 
 	if (av[1] != NULL)
 		result = atoi(av[1]);
