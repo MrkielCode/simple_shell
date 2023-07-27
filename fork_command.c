@@ -16,30 +16,24 @@ int fork_command(char *full_path, char **argv)
 
 	pid = fork();
 
-	if (pid < 0)
+	if (pid == -1)
 	{
-		_print("fork error");
+		perror("fork error");
 		return (-1);
 	}
 
-	if (pid == -1)
-	{
-		perror(argv[0]);
-		return (-1);
-	}
 	if (pid == 0)
 	{
-		if (execve(full_path, argv, environ) == -1)
+		status = execve(full_path, argv, environ);
+		if(status == -1)
+			return (-1);
+	} else 
+	{
+		if (waitpid(pid, &status, WUNTRACED))
 		{
-			perror(argv[0]);
+			perror("pid waiting error");
 			return (-1);
 		}
-	}
-	else
-	{
-		do {
-			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 
 	return (-1);
