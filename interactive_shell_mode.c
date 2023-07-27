@@ -2,7 +2,7 @@
 
 
 /**
- * _write - To print shell prompt
+ * _write - Ti print shell prompt
  * Return: void
  */
 
