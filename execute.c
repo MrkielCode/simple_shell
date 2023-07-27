@@ -4,28 +4,19 @@
  * execute_call - To execute commads from users
  * @argv: argument variables
  * @name: name of the shell
- * @prev_st: Name of the shell
  * Return: status
  */
-int execute_call(char **argv, char *name, int prev_st)
+int execute_call(char **argv, char *name)
 {
-	int result;
+	int status = 0, result;
 
 	char *full_path = NULL;
 
 	if (!argv || !*argv)
 		return (-1);
-	/*
-	 * while (argv[track] != NULL)
-	 * {
-	 * if (strcmp(argv[track], "|") == 0)
-	 * return (pipe_command(argv));
-	 * track++;
-	 * }
-	 */
 
-	if (check_builtin(argv, prev_st))
-		return (-1);
+	if (check_builtin(argv))
+		return (status);
 
 	if (access(argv[0], X_OK) == 0)
 	{
