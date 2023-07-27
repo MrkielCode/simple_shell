@@ -35,7 +35,7 @@ char **tokenize(char *str, const char *delim);
 char **parse(char *input);
 char *search_path(char *cmd);
 int fork_command(char *full_path, char **argv);
-int execute_call(char **argv, char *name);
+int execute_call(char **argv, char *name, int p_st);
 
 /* pipe utility */
 int exec_semiColon(char *args[]);
@@ -45,8 +45,8 @@ int pipe_command(char *args[]);
 void free_toks(char **tokens);
 
 /* builtin ulility */
-int check_builtin(char **av);
-void s_exit(char **av);
+int check_builtin(char **av, int p_st);
+void s_exit(char **av, int p_st);
 int s_env(void);
 
 void handle_sigint(int sig);

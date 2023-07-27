@@ -4,9 +4,10 @@
  * execute_call - To execute commads from users
  * @argv: argument variables
  * @name: name of the shell
+ * @p_st: the previous exit status
  * Return: status
  */
-int execute_call(char **argv, char *name)
+int execute_call(char **argv, char *name, int p_st)
 {
 	int result;
 
@@ -24,7 +25,7 @@ int execute_call(char **argv, char *name)
 	 */
 
 
-	if (check_builtin(argv))
+	if (check_builtin(argv, p_st))
 		return (-1);
 
 	if (access(argv[0], X_OK) == 0)

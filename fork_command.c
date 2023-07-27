@@ -37,9 +37,13 @@ int fork_command(char *full_path, char **argv)
 	}
 	else
 	{
-		do {
-			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		/*
+		 * do {
+		 * waitpid(pid, &status, WUNTRACED);
+		 * } while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		*/
+		wait(&status);
+		return (WEXITSTATUS(status));
 	}
 
 	return (-1);
