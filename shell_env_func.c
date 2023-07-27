@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * s_env - To display env
+ * handle_env - To display env
  * Return: void
  */
 int handle_env(void)
