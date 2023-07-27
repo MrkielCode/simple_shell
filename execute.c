@@ -2,9 +2,9 @@
 
 /**
  * execute_call - To execute commads from users
- * @argv: argument variables
- * @name: name of the shell
- * Return: status
+ * @argv: Argument variables (aaray of strings)
+ * @name: Name of the shell (string)
+ * Return: status of the command execution(integer)
  */
 int execute_call(char **argv, char *name)
 {
