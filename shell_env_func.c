@@ -4,7 +4,7 @@
  * s_env - To display env
  * Return: void
  */
-int s_env(void)
+int handle_env(void)
 {
 	int i = 0;
 

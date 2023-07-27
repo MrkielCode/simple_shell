@@ -6,13 +6,14 @@
  * Return: void
  */
 
-void s_exit(char **av)
+void handle_exit(char **av)
 {
-	int result = 0;
+	int status = 0;
 
 	if (av[1] != NULL)
-		result = atoi(av[1]);
-
+	{
+		status = atoi(av[1]);
+	}
 	free_toks(av);
-	exit(result);
+	exit(status);
 }

@@ -46,10 +46,7 @@ void free_toks(char **tokens);
 
 /* builtin ulility */
 int check_builtin(char **av);
-void s_exit(char **av);
-int s_env(void);
+void handle_exit(char **av);
+int handle_env(void);
 
-void handle_sigint(int sig);
-void handle_sigquit(int sig);
-void handle_sigstp(int sig);
 #endif
