@@ -21,6 +21,7 @@ void interactive_shell_mode(char *name)
 {
 	char *line;
 	char **args;
+	int status;
 
 	while (1)
 	{
@@ -28,9 +29,14 @@ void interactive_shell_mode(char *name)
 
 		line = read_inputs();
 		args = parse(line);
-		execute_call(args, name);
+		status = execute_call(args, name);
 
 		free(line);
 		free(args);
+		if (status >= 0)
+		{
+			exit(status);
+		} else
+			continue;
 	}
 }
