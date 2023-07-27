@@ -25,9 +25,10 @@ int fork_command(char *full_path, char **argv)
 	if (pid == 0)
 	{
 		status = execve(full_path, argv, environ);
-		if(status == -1)
+		if (status == -1)
 			return (-1);
-	} else 
+	}
+	else
 	{
 		if (waitpid(pid, &status, WUNTRACED))
 		{
