@@ -15,8 +15,6 @@ int check_builtin(char **av, int p_st)
 		s_exit(av, p_st);
 	if (!strcmp(av[0], "env"))
 		s_env();
-	if (!strcmp(av[0], "cd"))
-		s_cd(av);
 	else
 		return (0);
 
