@@ -52,4 +52,8 @@ int s_env(void);
 void handle_sigint(int sig);
 void handle_sigquit(int sig);
 void handle_sigstp(int sig);
+
+
+void ignore_comments(char *lineptr);
 #endif
+
