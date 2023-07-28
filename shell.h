@@ -48,6 +48,7 @@ void free_toks(char **tokens);
 int check_builtin(char **av, int p_st);
 void s_exit(char **av, int p_st);
 int s_env(void);
+int s_cd(char **av);
 
 void handle_sigint(int sig);
 void handle_sigquit(int sig);
