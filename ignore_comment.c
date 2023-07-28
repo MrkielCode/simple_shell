@@ -11,9 +11,9 @@ void ignore_comments(char *lineptr)
 
 	for (i = 0; lineptr[i] != '\0'; i++)
 	{
-		if (lineptr[i] == '#' && (i == 0 || loineptr[i - 1] == ' '))
+		if (lineptr[i] == '#' && (i == 0 || lineptr[i - 1] == ' '))
 		{
-			lineptr[i] = '\';
+			lineptr[i] = '\0';
 			return;
 		}
 	}
