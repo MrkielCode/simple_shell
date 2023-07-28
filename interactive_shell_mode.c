@@ -28,6 +28,7 @@ void interactive_shell_mode(char *name)
 		_write();
 
 		line = read_inputs();
+		ignore_comments(line);
 		args = parse(line);
 		status = execute_call(args, name, status);
 
